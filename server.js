@@ -23,7 +23,7 @@ app.use(cors());
 const id = 0;
 
 app.get('/',(req, res) => {
-    db.select('*').from('users')
+    /*db.select('*').from('users')
         .then(users =>{
             if (users.length)
                 return res.json(users);
@@ -33,7 +33,8 @@ app.get('/',(req, res) => {
         .catch(err => {
             console.log(err);
             sendNotFoundResponse('unable to fetch users', res);
-        })
+        })*/
+        return res.json('App is running')
 })
 
 
@@ -147,5 +148,5 @@ app.post('/register', (req,res) =>{
 })
  
 app.listen(process.env.PORT || 3000, () =>{
-    console.log(`app is running on ${process.env.PORT || 3000}`);
+    console.log(`app is running on port ${process.env.PORT || 3000}`);
 });
